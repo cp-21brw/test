@@ -1,0 +1,84 @@
+# Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+menu.cache=Cache
+menu.speed=CPU Speed
+menu.opt=Optimize
+menu.maxqspi=Max QSPI
+menu.usbstack=USB Stack
+menu.debug=Debug
+
+
+# -----------------------------------
+# Custom SAMD21
+# -----------------------------------
+samd21.name= Custom samd21
+
+# VID/PID for Bootloader, Arduino & CircuitPython
+samd21.vid.0=0x239A
+samd21.pid.0=0x8013
+samd21.vid.1=0x239A
+samd21.pid.1=0x0013
+
+# Upload
+samd21.upload.tool=bossac18
+samd21.upload.protocol=sam-ba
+samd21.upload.maximum_size=262144
+samd21.upload.offset=0x2000
+samd21.upload.use_1200bps_touch=true
+samd21.upload.wait_for_upload_port=true
+samd21.upload.native_usb=true
+
+# Build
+samd21.mcu=cortex-m0plus
+samd21.build.f_cpu=48000000L
+samd21.build.usb_product="Custom samd21"
+samd21.build.usb_manufacturer="Custom"
+samd21.build.board=Custom_samd21
+samd21.build.core=arduino
+samd21.build.extra_flags=-D__SAMD21G18A__ -DADAFRUIT_METRO_M0_EXPRESS -DARDUINO_SAMD_ZERO -DARM_MATH_CM0PLUS {build.usb_flags}
+samd21.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+samd21.build.openocdscript=scripts/openocd/daplink_samd21.cfg
+samd21.build.variant=Custom_samd21
+samd21.build.variant_system_lib=
+samd21.build.vid=0x239A
+samd21.build.pid=0x8013
+samd21.bootloader.tool=openocd
+samd21.bootloader.file=metroM0/bootloader-metro_m0-v2.0.0-adafruit.5.bin
+
+# Menu: Optimization
+samd21.menu.opt.small=Small (-Os) (standard)
+samd21.menu.opt.small.build.flags.optimize=-Os
+samd21.menu.opt.fast=Fast (-O2)
+samd21.menu.opt.fast.build.flags.optimize=-O2
+samd21.menu.opt.faster=Faster (-O3)
+samd21.menu.opt.faster.build.flags.optimize=-O3
+samd21.menu.opt.fastest=Fastest (-Ofast)
+samd21.menu.opt.fastest.build.flags.optimize=-Ofast
+samd21.menu.opt.dragons=Here be dragons (-Ofast -funroll-loops)
+samd21.menu.opt.dragons.build.flags.optimize=-Ofast -funroll-loops
+
+# Menu: USB Stack
+samd21.menu.usbstack.arduino=Arduino
+samd21.menu.usbstack.tinyusb=TinyUSB
+samd21.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+
+# Menu: Debug
+samd21.menu.debug.off=Off
+samd21.menu.debug.on=On
+samd21.menu.debug.on.build.flags.debug=-g
+
+
