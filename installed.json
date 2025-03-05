@@ -1,19 +1,19 @@
 {
   "packages": [
     {
-      "name": "adafruit",
-      "maintainer": "Adafruit",
-      "websiteUrl": "https://adafruit.com",
-      "Url": "https://adafruit.github.io/arduino-board-index/package_adafruit_index.json",
+      "name": "Custom samd21",
+      "maintainer": "Custom",
+      "websiteUrl": "https://github.com/cp-21brw/test",
+      "Url": "https://github.com/cp-21brw/test",
       "email": "info@adafruit.com",
       "platforms": [
         {
-          "name": "Adafruit SAMD Boards",
+          "name": "https://github.com/cp-21brw/test",
           "architecture": "samd",
           "version": "1.7.16",
           "deprecated": false,
-          "category": "Adafruit",
-          "url": "https://adafruit.github.io/arduino-board-index/boards/adafruit-samd-1.7.16.tar.bz2",
+          "category": "Custom",
+          "url": "https://github.com/cp-21brw/test",
           "archiveFileName": "adafruit-samd-1.7.16.tar.bz2",
           "checksum": "SHA-256:56a099437b0fc6d160922e34a49147a05600d028d3c780c2f575c4d50106f9e0",
           "size": "4677720",
